@@ -6,6 +6,7 @@
 library(rgdal)
 library(raster)
 library(downloader)
+library(grid)
 
 # Download and unzip data
 download("https://github.com/GeoScripting-WUR/VectorRaster/raw/gh-pages/data/MODIS.zip",
@@ -46,7 +47,7 @@ greenest.city.Year <- subset(NL.NDVI.Year, layer == max(NL.NDVI.Year$layer, na.r
 # Visualisation
 map1 <- spplot(NL.NDVI.January, main = list("January"), zcol = 'January',
                col.regions = colorRampPalette(c("#E5FFCC", "#003300"))(20))
-map2 <- spplot(NL.NDVI.August, main = list("February"), zcol = 'August',
+map2 <- spplot(NL.NDVI.August, main = list("August"), zcol = 'August',
                col.regions = colorRampPalette(c("#E5FFCC", "#003300"))(20))
 map3 <- spplot(NL.NDVI.Year, main = list("Yearly"), zcol = 'layer',
                col.regions = colorRampPalette(c("#E5FFCC", "#003300"))(20))
